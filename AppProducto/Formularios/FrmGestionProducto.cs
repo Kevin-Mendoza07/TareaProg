@@ -16,7 +16,7 @@ namespace AppProducto.Formularios
 {
     public partial class FrmGestionProducto : Form
     {
-        private ProductoModel productoModel;
+        
         private IProductoService productoService;
         public FrmGestionProducto(IProductoService productoService)
         {
