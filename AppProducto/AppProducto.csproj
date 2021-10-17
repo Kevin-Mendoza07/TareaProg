@@ -74,6 +74,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Formularios Inventario\FrmAgregarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Formularios Inventario\FrmAgregarCompra.Designer.cs">
+      <DependentUpon>FrmAgregarCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Formularios Inventario\FrmAgregarSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Formularios Inventario\FrmAgregarSalidas.Designer.cs">
+      <DependentUpon>FrmAgregarSalidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Formularios Inventario\FrmGestionInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Formularios Inventario\FrmGestionInventario.Designer.cs">
+      <DependentUpon>FrmGestionInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmGestionProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +106,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Formularios Inventario\FrmAgregarCompra.resx">
+      <DependentUpon>FrmAgregarCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Formularios Inventario\FrmAgregarSalidas.resx">
+      <DependentUpon>FrmAgregarSalidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Formularios Inventario\FrmGestionInventario.resx">
+      <DependentUpon>FrmGestionInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmGestionProducto.resx">
       <DependentUpon>FrmGestionProducto.cs</DependentUpon>
     </EmbeddedResource>

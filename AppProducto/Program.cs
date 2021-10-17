@@ -1,6 +1,7 @@
 ﻿using AppCore.Interfaces;
 using AppCore.Services;
 using AppProducto.Formularios;
+using AppProducto.Formularios.Formularios_Inventario;
 using Autofac;
 using Domain.Interfaces;
 using Infraestructure.Productos;
@@ -28,7 +29,7 @@ namespace AppProducto
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmGestionProducto(container.Resolve<IProductoService>()));
+            Application.Run(new FrmGestionInventario());
         }
     }
 }
