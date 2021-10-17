@@ -32,7 +32,18 @@ namespace AppProducto.Formularios.Formularios_Inventario
 
         private void btnAgregarSalida_Click(object sender, EventArgs e)
         {
-            
+            FrmAgregarSalidas frmAgregarSalidas = new FrmAgregarSalidas();
+            frmAgregarSalidas.listInventory = listaSalidas;
+            frmAgregarSalidas.ShowDialog();
+
+            dgvSalidas.DataSource = null;
+            dgvSalidas.DataSource = listaSalidas;
+
+        }
+
+        private void btnCMatDisponible_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

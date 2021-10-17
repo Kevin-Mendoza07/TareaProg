@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Infraestructure.Productos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,8 @@ namespace AppProducto.Formularios.Formularios_Inventario
     public partial class FrmAgregarCompra : Form
     {
         public List<Inventario> listaInventario = new List<Inventario>();
+
+        
         public FrmAgregarCompra()
         {
             InitializeComponent();
@@ -26,15 +29,35 @@ namespace AppProducto.Formularios.Formularios_Inventario
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Inventario Inv = new Inventario(){
-                Unidades = (int)nudUnidades.Value,
-                CostoUnitario = nudCostoU.Value,
-                FechaAdquisicion = dtpFechaAdquisicion.Value,
-                CostoTotal = nudCostoU.Value*nudUnidades.Value
-            };
-            listaInventario.Add(Inv);
 
-            Dispose();
+            if ((int)nudUnidades.Value <= 0)
+            {
+                MessageBox.Show("Error, la cantidad de unidades es invalida", "Mensaje de Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if ((int)nudCostoU.Value<=0)
+            {
+                MessageBox.Show("Error, el costo es invalido","Mensaje de Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
+            
+                Inventario Inv = new Inventario()
+                {
+
+
+                    Unidades = (int)nudUnidades.Value,
+                    CostoUnitario = nudCostoU.Value,
+                    FechaAdquisicion = dtpFechaAdquisicion.Value,
+                    CostoTotal = nudCostoU.Value * nudUnidades.Value
+
+                };
+                listaInventario.Add(Inv);
+
+                Dispose();
+
+            
+        }
+            
         }
     }
-}
+

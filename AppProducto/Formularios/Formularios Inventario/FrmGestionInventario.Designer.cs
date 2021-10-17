@@ -35,9 +35,10 @@ namespace AppProducto.Formularios.Formularios_Inventario
             this.btnAgregarSalida = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnCMatDisponible = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvSalidas = new System.Windows.Forms.DataGridView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalidas)).BeginInit();
             this.SuspendLayout();
@@ -98,14 +99,15 @@ namespace AppProducto.Formularios.Formularios_Inventario
             this.button4.Text = "Costo Inventario Final";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnCMatDisponible
             // 
-            this.button5.Location = new System.Drawing.Point(306, 396);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(113, 43);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Costo Materiales Disponibles";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCMatDisponible.Location = new System.Drawing.Point(306, 396);
+            this.btnCMatDisponible.Name = "btnCMatDisponible";
+            this.btnCMatDisponible.Size = new System.Drawing.Size(113, 43);
+            this.btnCMatDisponible.TabIndex = 6;
+            this.btnCMatDisponible.Text = "Costo Materiales Disponibles";
+            this.btnCMatDisponible.UseVisualStyleBackColor = true;
+            this.btnCMatDisponible.Click += new System.EventHandler(this.btnCMatDisponible_Click);
             // 
             // groupBox1
             // 
@@ -130,7 +132,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 451);
             this.Controls.Add(this.dgvSalidas);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnCMatDisponible);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnAgregarSalida);
@@ -155,8 +157,9 @@ namespace AppProducto.Formularios.Formularios_Inventario
         private System.Windows.Forms.Button btnAgregarSalida;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnCMatDisponible;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvSalidas;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

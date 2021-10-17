@@ -11,6 +11,9 @@ namespace Domain.Entities
         public int Unidades { get; set; }
         public decimal CostoTotal { get; set; }
         public decimal CostoUnitario { get; set; }
+        public int UnidadesUtilizadas { get; set; }
+
+        
 
     }
 }

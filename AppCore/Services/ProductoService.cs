@@ -52,12 +52,12 @@ namespace AppCore.Services
            return productoModel.GetProductosByFechaVencimiento(dt);
         }
 
-        public Producto []GetProductosByRangoPrecio(decimal start, decimal end)
+        public Producto[] GetProductosByRangoPrecio(decimal start, decimal end)
         {
             return productoModel.GetProductosByRangoPrecio(start,end);
         }
 
-        public Producto []GetProductosByUnidadMedida(UnidadMedida um)
+        public Producto[] GetProductosByUnidadMedida(UnidadMedida um)
         {
             return productoModel.GetProductosByUnidadMedida(um);
         }
