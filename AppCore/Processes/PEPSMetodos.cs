@@ -4,8 +4,21 @@ using System.Text;
 
 namespace AppCore.Processes
 {
-    public class PEPSMetodos
+    public class PEPSMetodos : InventoryCalculator, IInventoryCalculator
     {
+        public override decimal CostoInvFinal()
+        {
+            throw new NotImplementedException();
+        }
 
+        public override decimal CostoMatDisponibles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override decimal CostoMatUsados()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
