@@ -34,12 +34,16 @@ namespace AppProducto.Formularios.Formularios_Inventario
             if ((int)nudUnidades.Value <= 0)
             {
                 MessageBox.Show("Error, la cantidad de unidades es invalida", "Mensaje de Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
             }
 
             if ((int)nudCostoU.Value<=0)
             {
                 MessageBox.Show("Error, el costo es invalido","Mensaje de Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
             }
+
 
             
                 Inventario Inv = new Inventario()

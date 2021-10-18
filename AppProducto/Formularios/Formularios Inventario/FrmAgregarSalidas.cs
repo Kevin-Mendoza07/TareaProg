@@ -33,7 +33,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
             if (nudUnidUtilizadas.Value <= 0)
             {
                 MessageBox.Show("Error, la cantidad de unidades es invalida","Mensaje de Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-
+                return;
             }
             //if (inventarioModel.GetInventarios()[inventarioModel.GetInventarios().Count - 1].Unidades < nudUnidUtilizadas.Value)
             //{

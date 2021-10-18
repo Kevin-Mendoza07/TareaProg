@@ -47,7 +47,13 @@ namespace AppProducto.Formularios.Formularios_Inventario
 
         private void btnCMatDisponible_Click(object sender, EventArgs e)
         {
+            if (cmbEleccion.SelectedIndex.Equals(-1))
+            {
 
+                MessageBox.Show("Error, no ha seleccionado ningun metodo", "Mensaje de Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -58,6 +64,28 @@ namespace AppProducto.Formularios.Formularios_Inventario
         private void FrmGestionInventario_Load(object sender, EventArgs e)
         {
             cmbEleccion.Items.AddRange(Enum.GetValues(typeof(TipoMetodo)).Cast<object>().ToArray());
+        }
+
+        private void btnCstInvFinal_Click(object sender, EventArgs e)
+        {
+            if (cmbEleccion.SelectedIndex.Equals(-1))
+            {
+
+                MessageBox.Show("Error, no ha seleccionado ningun metodo", "Mensaje de Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void btnCstMatUsados_Click(object sender, EventArgs e)
+        {
+            if (cmbEleccion.SelectedIndex.Equals(-1))
+            {
+
+                MessageBox.Show("Error, no ha seleccionado ningun metodo", "Mensaje de Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }

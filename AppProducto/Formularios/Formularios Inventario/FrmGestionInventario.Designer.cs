@@ -96,6 +96,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
             this.btnCstMatUsados.TabIndex = 4;
             this.btnCstMatUsados.Text = "Costo Materiales Usados";
             this.btnCstMatUsados.UseVisualStyleBackColor = true;
+            this.btnCstMatUsados.Click += new System.EventHandler(this.btnCstMatUsados_Click);
             // 
             // btnCstInvFinal
             // 
@@ -105,6 +106,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
             this.btnCstInvFinal.TabIndex = 5;
             this.btnCstInvFinal.Text = "Costo Inventario Final";
             this.btnCstInvFinal.UseVisualStyleBackColor = true;
+            this.btnCstInvFinal.Click += new System.EventHandler(this.btnCstInvFinal_Click);
             // 
             // btnCMatDisponible
             // 

@@ -37,6 +37,12 @@ namespace AppCore.Processes
         {
             List<Inventario> sorted = inventarioModel.listaInv.OrderBy(x => x.FechaAdquisicion).ToList();
             return sorted;
+        
+        }
+
+        public decimal CostoUnit(int unidades, decimal costo)
+        {
+            return unidades * costo;
         }
         public class SortInventoryByDate : IComparer<Inventario>
         {
