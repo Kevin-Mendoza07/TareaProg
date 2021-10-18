@@ -82,6 +82,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
             // 
             // dtpFechaAdquisicion
             // 
+            this.dtpFechaAdquisicion.CustomFormat = "dd/mm/yyyy";
             this.dtpFechaAdquisicion.Location = new System.Drawing.Point(134, 91);
             this.dtpFechaAdquisicion.Name = "dtpFechaAdquisicion";
             this.dtpFechaAdquisicion.Size = new System.Drawing.Size(210, 20);
@@ -134,7 +135,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmAgregarCompra";
-            this.Text = "Agregar";
+            this.Text = "Entradas";
             ((System.ComponentModel.ISupportInitialize)(this.nudUnidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCostoU)).EndInit();
             this.ResumeLayout(false);

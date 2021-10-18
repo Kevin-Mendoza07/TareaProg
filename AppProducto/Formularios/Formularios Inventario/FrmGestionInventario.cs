@@ -1,4 +1,6 @@
 ﻿using Domain.Entities;
+using Domain.Enums;
+using Infraestructure.Productos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,37 +15,49 @@ namespace AppProducto.Formularios.Formularios_Inventario
 {
     public partial class FrmGestionInventario : Form
     {
-        List<Inventario> listaInv = new List<Inventario>();
-        List<Inventario> listaSalidas = new List<Inventario>();
+        private InventarioModel invModel;
         public FrmGestionInventario()
         {
+            invModel = new InventarioModel();
             InitializeComponent();
         }
 
         private void btnAgregarCompras_Click(object sender, EventArgs e)
         {
             FrmAgregarCompra frmAgregarCompra = new FrmAgregarCompra();
-            frmAgregarCompra.listaInventario = listaInv;
+            frmAgregarCompra.inventarioModel = invModel;
+            frmAgregarCompra.listaInventario = invModel.listaInv;
             frmAgregarCompra.ShowDialog();
 
             dgvInventario.DataSource = null;
-            dgvInventario.DataSource = listaInv;
+            dgvInventario.DataSource = invModel.listaInv;
         }
 
         private void btnAgregarSalida_Click(object sender, EventArgs e)
         {
             FrmAgregarSalidas frmAgregarSalidas = new FrmAgregarSalidas();
-            frmAgregarSalidas.listInventory = listaSalidas;
+            frmAgregarSalidas.inventarioModel = invModel;
+            frmAgregarSalidas.listInventory = invModel.listaSalidas;
             frmAgregarSalidas.ShowDialog();
 
             dgvSalidas.DataSource = null;
-            dgvSalidas.DataSource = listaSalidas;
+            dgvSalidas.DataSource = invModel.listaSalidas;
 
         }
 
         private void btnCMatDisponible_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FrmGestionInventario_Load(object sender, EventArgs e)
+        {
+            cmbEleccion.Items.AddRange(Enum.GetValues(typeof(TipoMetodo)).Cast<object>().ToArray());
         }
     }
 }

@@ -33,27 +33,34 @@ namespace AppProducto.Formularios.Formularios_Inventario
             this.btnAgregarCompras = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgregarSalida = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnCstMatUsados = new System.Windows.Forms.Button();
+            this.btnCstInvFinal = new System.Windows.Forms.Button();
             this.btnCMatDisponible = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvSalidas = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbEleccion = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalidas)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvInventario
             // 
+            this.dgvInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvInventario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventario.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvInventario.Location = new System.Drawing.Point(12, 108);
             this.dgvInventario.Name = "dgvInventario";
-            this.dgvInventario.Size = new System.Drawing.Size(398, 271);
+            this.dgvInventario.RowHeadersVisible = false;
+            this.dgvInventario.Size = new System.Drawing.Size(416, 271);
             this.dgvInventario.TabIndex = 0;
+            this.dgvInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellContentClick);
             // 
             // btnAgregarCompras
             // 
-            this.btnAgregarCompras.Location = new System.Drawing.Point(12, 56);
+            this.btnAgregarCompras.Location = new System.Drawing.Point(112, 66);
             this.btnAgregarCompras.Name = "btnAgregarCompras";
             this.btnAgregarCompras.Size = new System.Drawing.Size(111, 36);
             this.btnAgregarCompras.TabIndex = 1;
@@ -65,7 +72,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(257, 9);
+            this.label1.Location = new System.Drawing.Point(286, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(345, 37);
             this.label1.TabIndex = 2;
@@ -73,7 +80,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
             // 
             // btnAgregarSalida
             // 
-            this.btnAgregarSalida.Location = new System.Drawing.Point(425, 56);
+            this.btnAgregarSalida.Location = new System.Drawing.Point(614, 66);
             this.btnAgregarSalida.Name = "btnAgregarSalida";
             this.btnAgregarSalida.Size = new System.Drawing.Size(127, 36);
             this.btnAgregarSalida.TabIndex = 3;
@@ -81,27 +88,27 @@ namespace AppProducto.Formularios.Formularios_Inventario
             this.btnAgregarSalida.UseVisualStyleBackColor = true;
             this.btnAgregarSalida.Click += new System.EventHandler(this.btnAgregarSalida_Click);
             // 
-            // button3
+            // btnCstMatUsados
             // 
-            this.button3.Location = new System.Drawing.Point(531, 396);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 43);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Costo Materiales Usados";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCstMatUsados.Location = new System.Drawing.Point(729, 396);
+            this.btnCstMatUsados.Name = "btnCstMatUsados";
+            this.btnCstMatUsados.Size = new System.Drawing.Size(100, 43);
+            this.btnCstMatUsados.TabIndex = 4;
+            this.btnCstMatUsados.Text = "Costo Materiales Usados";
+            this.btnCstMatUsados.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnCstInvFinal
             // 
-            this.button4.Location = new System.Drawing.Point(425, 396);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 43);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Costo Inventario Final";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnCstInvFinal.Location = new System.Drawing.Point(623, 396);
+            this.btnCstInvFinal.Name = "btnCstInvFinal";
+            this.btnCstInvFinal.Size = new System.Drawing.Size(100, 43);
+            this.btnCstInvFinal.TabIndex = 5;
+            this.btnCstInvFinal.Text = "Costo Inventario Final";
+            this.btnCstInvFinal.UseVisualStyleBackColor = true;
             // 
             // btnCMatDisponible
             // 
-            this.btnCMatDisponible.Location = new System.Drawing.Point(306, 396);
+            this.btnCMatDisponible.Location = new System.Drawing.Point(504, 396);
             this.btnCMatDisponible.Name = "btnCMatDisponible";
             this.btnCMatDisponible.Size = new System.Drawing.Size(113, 43);
             this.btnCMatDisponible.TabIndex = 6;
@@ -111,30 +118,58 @@ namespace AppProducto.Formularios.Formularios_Inventario
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(293, 385);
+            this.groupBox1.Location = new System.Drawing.Point(493, 378);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(362, 57);
+            this.groupBox1.Size = new System.Drawing.Size(355, 64);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Calculos";
             // 
             // dgvSalidas
             // 
+            this.dgvSalidas.AllowUserToAddRows = false;
+            this.dgvSalidas.AllowUserToDeleteRows = false;
+            this.dgvSalidas.AllowUserToResizeColumns = false;
+            this.dgvSalidas.AllowUserToResizeRows = false;
+            this.dgvSalidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvSalidas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSalidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSalidas.Location = new System.Drawing.Point(425, 108);
+            this.dgvSalidas.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvSalidas.Location = new System.Drawing.Point(464, 108);
             this.dgvSalidas.Name = "dgvSalidas";
-            this.dgvSalidas.Size = new System.Drawing.Size(401, 271);
+            this.dgvSalidas.RowHeadersVisible = false;
+            this.dgvSalidas.Size = new System.Drawing.Size(415, 271);
             this.dgvSalidas.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(149, 411);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Elegir método:";
+            // 
+            // cmbEleccion
+            // 
+            this.cmbEleccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEleccion.FormattingEnabled = true;
+            this.cmbEleccion.Location = new System.Drawing.Point(229, 408);
+            this.cmbEleccion.Name = "cmbEleccion";
+            this.cmbEleccion.Size = new System.Drawing.Size(171, 21);
+            this.cmbEleccion.TabIndex = 10;
             // 
             // FrmGestionInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 451);
+            this.ClientSize = new System.Drawing.Size(901, 451);
+            this.Controls.Add(this.cmbEleccion);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvSalidas);
             this.Controls.Add(this.btnCMatDisponible);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnCstInvFinal);
+            this.Controls.Add(this.btnCstMatUsados);
             this.Controls.Add(this.btnAgregarSalida);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAgregarCompras);
@@ -142,6 +177,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmGestionInventario";
             this.Text = "Gestion";
+            this.Load += new System.EventHandler(this.FrmGestionInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalidas)).EndInit();
             this.ResumeLayout(false);
@@ -155,11 +191,13 @@ namespace AppProducto.Formularios.Formularios_Inventario
         private System.Windows.Forms.Button btnAgregarCompras;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAgregarSalida;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnCstMatUsados;
+        private System.Windows.Forms.Button btnCstInvFinal;
         private System.Windows.Forms.Button btnCMatDisponible;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvSalidas;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbEleccion;
     }
 }

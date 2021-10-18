@@ -36,14 +36,17 @@ namespace AppProducto.Formularios.Formularios_Inventario
             this.nudUnidUtilizadas = new System.Windows.Forms.NumericUpDown();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nudCostoU = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUnidUtilizadas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCostoU)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFechaSalida
             // 
             this.lblFechaSalida.AutoSize = true;
-            this.lblFechaSalida.Location = new System.Drawing.Point(39, 29);
+            this.lblFechaSalida.Location = new System.Drawing.Point(73, 29);
             this.lblFechaSalida.Name = "lblFechaSalida";
             this.lblFechaSalida.Size = new System.Drawing.Size(40, 13);
             this.lblFechaSalida.TabIndex = 0;
@@ -51,7 +54,8 @@ namespace AppProducto.Formularios.Formularios_Inventario
             // 
             // dtpFechaSalida
             // 
-            this.dtpFechaSalida.Location = new System.Drawing.Point(139, 23);
+            this.dtpFechaSalida.CustomFormat = "dd/mm/yyyy";
+            this.dtpFechaSalida.Location = new System.Drawing.Point(149, 22);
             this.dtpFechaSalida.Name = "dtpFechaSalida";
             this.dtpFechaSalida.Size = new System.Drawing.Size(226, 20);
             this.dtpFechaSalida.TabIndex = 2;
@@ -59,7 +63,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
             // lblUnidadesUtilizadas
             // 
             this.lblUnidadesUtilizadas.AutoSize = true;
-            this.lblUnidadesUtilizadas.Location = new System.Drawing.Point(15, 100);
+            this.lblUnidadesUtilizadas.Location = new System.Drawing.Point(25, 121);
             this.lblUnidadesUtilizadas.Name = "lblUnidadesUtilizadas";
             this.lblUnidadesUtilizadas.Size = new System.Drawing.Size(104, 13);
             this.lblUnidadesUtilizadas.TabIndex = 3;
@@ -67,6 +71,8 @@ namespace AppProducto.Formularios.Formularios_Inventario
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.nudCostoU);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.nudUnidUtilizadas);
             this.groupBox1.Controls.Add(this.lblFechaSalida);
             this.groupBox1.Controls.Add(this.lblUnidadesUtilizadas);
@@ -80,7 +86,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
             // 
             // nudUnidUtilizadas
             // 
-            this.nudUnidUtilizadas.Location = new System.Drawing.Point(139, 98);
+            this.nudUnidUtilizadas.Location = new System.Drawing.Point(149, 119);
             this.nudUnidUtilizadas.Name = "nudUnidUtilizadas";
             this.nudUnidUtilizadas.Size = new System.Drawing.Size(226, 20);
             this.nudUnidUtilizadas.TabIndex = 4;
@@ -105,6 +111,33 @@ namespace AppProducto.Formularios.Formularios_Inventario
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(39, 77);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Costo unitario:";
+            // 
+            // nudCostoU
+            // 
+            this.nudCostoU.DecimalPlaces = 2;
+            this.nudCostoU.Location = new System.Drawing.Point(149, 75);
+            this.nudCostoU.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCostoU.Name = "nudCostoU";
+            this.nudCostoU.Size = new System.Drawing.Size(226, 20);
+            this.nudCostoU.TabIndex = 6;
+            this.nudCostoU.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // FrmAgregarSalidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +151,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUnidUtilizadas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCostoU)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -131,5 +165,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
         private System.Windows.Forms.NumericUpDown nudUnidUtilizadas;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.NumericUpDown nudCostoU;
+        private System.Windows.Forms.Label label1;
     }
 }

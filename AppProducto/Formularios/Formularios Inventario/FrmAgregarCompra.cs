@@ -15,10 +15,11 @@ namespace AppProducto.Formularios.Formularios_Inventario
     public partial class FrmAgregarCompra : Form
     {
         public List<Inventario> listaInventario = new List<Inventario>();
-
+        public InventarioModel inventarioModel { get; set; }
         
         public FrmAgregarCompra()
         {
+            
             InitializeComponent();
         }
 
@@ -44,7 +45,7 @@ namespace AppProducto.Formularios.Formularios_Inventario
                 Inventario Inv = new Inventario()
                 {
 
-
+                    Id = listaInventario.Count + 1,
                     Unidades = (int)nudUnidades.Value,
                     CostoUnitario = nudCostoU.Value,
                     FechaAdquisicion = dtpFechaAdquisicion.Value,
